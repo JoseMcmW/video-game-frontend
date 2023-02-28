@@ -13,12 +13,15 @@ function Home() {
 
   return (
   <div>
-    <div>
+    <h1>Videojuegos</h1>
+    <div className="container">
+     <div className="row">
       {allVideogames.map(v => {
-        return (<div key={v.id}>
+        return (<div className="col col-md-6 col-lg-3" key={v.id}>
                   <Card name = {v.name} image = {v.image} rating = {v.rating}/>
                 </div>)
       })}
+    </div>
     </div>
   </div>)
 }

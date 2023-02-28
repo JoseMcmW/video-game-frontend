@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Switch>
-        <Route exact path = "/home">
+        <Route exact path= "/home">
           <Home/>
         </Route>
       </Switch>
