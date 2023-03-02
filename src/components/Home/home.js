@@ -13,11 +13,11 @@ function Home() {
 
   return (
   <div>
-    <h1>Videojuegos</h1>
-    <div className="container">
+    <h1 className="mt-3">Videojuegos</h1>
+    <div className="container-fluid">
      <div className="row">
       {allVideogames.map(v => {
-        return (<div className="col col-md-6 col-lg-3" key={v.id}>
+        return (<div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 mt-3" key={v.id}>
                   <Card name = {v.name} image = {v.image} rating = {v.rating}/>
                 </div>)
       })}
