@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {getVideogames} from "../../redux/action/index";
 import Card from "../Cards/cards";
+import Navbar from '../Navbar/navbar';
 
 function Home() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function Home() {
 
   return (
   <div>
+    <Navbar/>
     <h1 className="mt-3">Videojuegos</h1>
     <div className="container-fluid">
      <div className="row">
