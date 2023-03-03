@@ -1,0 +1,26 @@
+.card {
+    border: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.card-body-1 {
+    font-size: 0.8em;
+}
+
+.color {
+    background-color: #027A7A;
+    border-radius: 10px;
+}
+
+.card-text-description {
+    height: 120px;
+    overflow-y: scroll;
+    text-align: justify;
+}
+
+.text-recommended {
+    text-align: justify;
+}
+
+

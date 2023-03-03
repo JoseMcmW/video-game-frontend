@@ -5,6 +5,7 @@ import { getVideogames } from "../../redux/action/index";
 import Card from "../Cards/cards";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import '../Home/Home.css';
 
 function Home() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <h1 className="mt-3">Videojuegos</h1>
+      <h1 className="mt-5 pt-3">Videojuegos</h1>
       <div className="container-fluid">
         <div className="row">
           {allVideogames.map((v) => {
@@ -25,7 +26,7 @@ function Home() {
                 className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 mt-3"
                 key={v.id}
               >
-                <Link to={`detail/${v.id}`}>
+                <Link className="text-decoration-none" to={`detail/${v.id}`}>
                 <Card name={v.name} image={v.image} rating={v.rating} />
                 </Link>
               </div>

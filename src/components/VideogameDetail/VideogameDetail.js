@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getVideogameById } from "../../redux/action";
+import '../VideogameDetail/VideogameDetail.css';
+import Navbar from "../Navbar/Navbar";
 
 const VideogameDetail = () => {
   const dispatch = useDispatch();
@@ -15,36 +17,39 @@ const VideogameDetail = () => {
   }, [dispatch, id]);
 
   return (
-    <div className="card mb-3">
+    <><Navbar /><div className="card mt-5 mb-3 pt-4 px-5">
+      <h1 className="mb-5">Videojuego</h1>
       <div className="row g-0">
-        <div className="col-md-4">
+        <div className="col p-5 d-flex align-items-center color">
           <img
             src={detail.image}
-            className="img-fluid rounded-start"
-            alt="..."
-          />
+            className="img-fluid rounded-start text-center"
+            alt="..." />
         </div>
-        <div className="col-md-8">
-          <div className="card-body">
+        <div className="col ">
+          <div className="card-body-1">
             <h5 className="card-title">{detail.name}</h5>
-            <p className="card-text">{detail.description}</p>
+            <p className="card-text-description px-4">{detail.description}</p>
+            <h6>Platforms:</h6>
             {detail.platforms &&
               detail.platforms.map((p, index) => {
                 return (
                   <div key={index}>
                     <ul>
-                      <li>{p.name}</li>
+                      <li className="list-unstyled">{p.name}
+                        {p.name === "PC" ? <div className="text-recommended">{p.requirements.recommended}</div> : ""}
+                      </li>
                     </ul>
                   </div>
                 );
               })}
             <p className="card-text">
-              <small className="text-muted">{detail.rating}</small>
+              <small className="text-muted">Rating: {detail.rating}</small>
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

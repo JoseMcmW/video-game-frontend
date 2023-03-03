@@ -1,0 +1,9 @@
+.card-body {
+    background-color: #027A7A;
+    color: black;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    flex-direction: column;
+}
+
+
