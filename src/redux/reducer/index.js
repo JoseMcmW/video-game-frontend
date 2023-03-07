@@ -1,4 +1,4 @@
-import { GET_ALL_VIDEOGAMES, GET_VIDEOGAME_BY_ID } from "../action/index";
+import { GET_ALL_VIDEOGAMES, GET_VIDEOGAME_BY_ID, SEARCH_VIDEOGAME } from "../action/index";
 
 const initialState = { videogames: [], videogameByID: [] };
 
@@ -13,7 +13,11 @@ const videogamesReducer = (state = initialState, action) => {
         ...state,
         videogameByID: action.payload
       };
-
+    case SEARCH_VIDEOGAME:
+      return {
+        ...state,
+        videogames: action.payload
+      }
     default:
       return state;
   }
