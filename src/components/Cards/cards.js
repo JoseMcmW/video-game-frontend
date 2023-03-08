@@ -1,9 +1,10 @@
 import React from "react";
-import '../Cards/cards.css'
+import '../Cards/cards.css';
 
 
 function Card ({name, image, rating}) {
   return (
+    
   <div className="card h-100">
   <img src={image} className="card-img-top" alt="..." style={{height: '200px'}} />
   <div className="card-body d-flex flex-wrap align-items-center">
