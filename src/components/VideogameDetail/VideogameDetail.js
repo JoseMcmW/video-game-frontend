@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getVideogameById } from "../../redux/action";
 import '../VideogameDetail/VideogameDetail.css';
 import Navbar from "../Navbar/Navbar";
@@ -10,7 +10,6 @@ const VideogameDetail = () => {
   let { id } = useParams();
 
   const detail = useSelector((state) => state.videogameByID);
-  console.log("DETALLEVIDEO", detail);
 
   useEffect(() => {
     dispatch(getVideogameById(id));
@@ -18,8 +17,13 @@ const VideogameDetail = () => {
 
   return (
     <><Navbar /><div className="card mt-5 mb-3 pt-4 px-5">
-      <h1 className="mb-5">Videojuego</h1>
       <div className="row g-0">
+        <div className="col-1 d-flex align-items-start">
+        <Link to="/home"><i className="bi bi-caret-left-fill btn btn-dark"></i></Link>
+        </div>
+        <div className="col-11">
+        <h1 className="mb-5">Videojuego</h1>
+        </div>
         <div className="col p-5 d-flex align-items-center color">
           <img
             src={detail.image}
