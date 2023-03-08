@@ -6,7 +6,8 @@ const videogamesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_VIDEOGAMES:
       return {
-        ...state, videogames: action.payload
+        ...state,
+        videogames: action.payload
       };
     case GET_VIDEOGAME_BY_ID:
       return {
