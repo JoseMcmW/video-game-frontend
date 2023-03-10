@@ -19,6 +19,7 @@ function Home() {
 const [pagina, setPagina] = useState(1);
 const [porPagina, /* setPorPagina */] = useState(16);
 
+
 const maximo = Math.ceil(allVideogames.length / porPagina);
 
 
@@ -36,7 +37,7 @@ const maximo = Math.ceil(allVideogames.length / porPagina);
                 className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 mt-3"
                 key={v.id}
               >
-                <Link className="text-decoration-none" to={`detail/${v.id}`}>
+                <Link className="text-decoration-none " to={`detail/${v.id}`}>
                 <Card name={v.name} image={v.image} rating={v.rating} />
                 </Link>
               </div>
@@ -44,7 +45,7 @@ const maximo = Math.ceil(allVideogames.length / porPagina);
           })}
         </div>
       </div>
-      <Paginated  pagina={pagina} setPagina={setPagina} maximo={maximo}/>
+      <Paginated pagina={pagina} setPagina={setPagina} maximo={maximo}/>
     </div>
   );
 }

@@ -3,10 +3,13 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { searchVideogame } from "../../redux/action";
 import { getVideogames } from "../../redux/action";
+import "../Navbar/Navbar.css"
 
 const Navbar = () => {
+  console.log('pagina :>> ');
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
+
 
   useEffect(() => {
     dispatch(getVideogames());
@@ -46,8 +49,8 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarScroll">
-            <form onSubmit={handleSearch} className="d-flex mt-3 mt-lg-2 mt-md-3" role="search">
+          <div className="search-1 collapse navbar-collapse" id="navbarScroll">
+            <form onSubmit={handleSearch} className="d-flex justify-contend-end mt-3 mt-lg-2 mt-md-3" role="search">
               <input
                 onChange={handleSubmit}
                 className="form-control me-2"
@@ -63,26 +66,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {/*       <nav className="navbar bg-dark navbar-dark fixed-top">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/home" onClick={goToHome} >
-            VideoJuegos
-          </Link>
-          <form onSubmit={handleSearch} className="d-flex" role="search">
-            <input
-              onChange={handleSubmit}
-              className="form-control me-2"
-              type="search"
-              placeholder="Search Videogame"
-              aria-label="Search"
-              value={search}
-            />
-            <button className="btn btn-dark" type="submit" value="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav> */}
     </div>
   );
 };

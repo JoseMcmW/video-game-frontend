@@ -6,4 +6,9 @@
     flex-direction: column;
 }
 
-
+.card {
+    box-shadow:
+        0 -15px 1em rgba(0, 0, 0, 0.4),
+        0 0 0 2px rgb(255, 255, 255),
+        0em 0em 1em rgba(0, 0, 0, 0.5);
+}
